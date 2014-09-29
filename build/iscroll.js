@@ -1515,7 +1515,7 @@ IScroll.prototype = {
 			}
 
 			now = ( now - startTime ) / duration;
-			easing = 1;
+			easing = easingFn == undefined ? 1 * easingFn(now);
 			newX = ( destX - startX ) * easing + startX;
 			newY = ( destY - startY ) * easing + startY;
 			that._translate(newX, newY);
